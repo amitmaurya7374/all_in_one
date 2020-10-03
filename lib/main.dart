@@ -1,3 +1,4 @@
+import 'package:all_in_one/pages/ch22.dart';
 import 'package:all_in_one/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       home: HomePage(),
+      routes: {
+        DialogPage.routeName:(context)=>DialogPage(),
+      },
     );
   }
 }

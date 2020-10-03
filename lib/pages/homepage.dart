@@ -1,3 +1,4 @@
+import 'package:all_in_one/pages/ch22.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        onTap: (index)=>debugPrint('BottomNavigationBarTapped $index'),
+        onTap: (index) => debugPrint('BottomNavigationBarTapped $index'),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.ac_unit),
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget {
           children: [
             IconButton(
               icon: Icon(Icons.mail),
-              onPressed: (){},
+              onPressed: () {},
             ),
             SizedBox(
               width: 10.0,
@@ -57,7 +58,6 @@ class HomePage extends StatelessWidget {
         ),
       ),
       drawer: Drawer(
-
         child: ListView(
           children: [
             Container(
@@ -71,16 +71,28 @@ class HomePage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.phone_android,color: Colors.deepPurple,),
-                      SizedBox(width: 5.0,),
+                      Icon(
+                        Icons.phone_android,
+                        color: Colors.deepPurple,
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text('Drawer Item 1'),
                     ],
                   ),
-                  SizedBox(height: 10.0,),
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   Row(
                     children: [
-                      Icon(Icons.train,color: Colors.deepPurple,),
-                      SizedBox(width: 5.0,),
+                      Icon(
+                        Icons.train,
+                        color: Colors.deepPurple,
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
                       Text('Drawer Item 2'),
                     ],
                   ),
@@ -92,16 +104,20 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 10.0,
-        onPressed: (){
+        onPressed: () {
           print('You tapped mee');
-
         },
-        child: Icon(Icons.accessibility),
+        child: IconButton(
+          icon: Icon(Icons.accessibility),
+          onPressed: () => Navigator.of(context).pushNamed(
+            DialogPage.routeName,
+          ),
+        ),
       ),
       persistentFooterButtons: [
         IconButton(
           icon: Icon(Icons.access_alarm),
-          onPressed: (){},
+          onPressed: () {},
         ),
       ],
     );
